@@ -15,8 +15,7 @@ namespace ValidationsP1
     public partial class Form1 : Form
     {
         public readonly Funtionalities viewFuntionalities = new Funtionalities();
-        static string conexionstring = "server = DESKTOP-SMH42I7\\Eriberka; database = gestionProductosDB; integrated security =True";
-        SqlConnection conexion = new SqlConnection(conexionstring);
+            
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +37,7 @@ namespace ValidationsP1
             this.categoriasTableAdapter.Fill(this.gestionProductosDBDataSet.Categorias);
         }
 
-       
+               
 
 
         private void Save_Click(object sender, EventArgs e)
@@ -56,6 +55,14 @@ namespace ValidationsP1
         private void saveSupli(object sender, EventArgs e)
         {
             viewFuntionalities.GuardarSuplidores(gestionProductosDBDataSet, suplidoresBindingSource, tableAdapterManager);
+            string correo = correoTextBox.Text;
+           
+            if (!viewFuntionalities.EsCorreoValido(correo))
+            {
+                MessageBox.Show("El correo electrónico no es válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                correoTextBox.Focus();
+                return;
+            }
         }
 
         private void saveCata(object sender, EventArgs e)
@@ -126,6 +133,12 @@ namespace ValidationsP1
             tableAdapterManager, nombreEmpresaTextBox,
             () => suplidoresTableAdapter.Fill(gestionProductosDBDataSet.Suplidores)
             );
+        }
+
+        private void btnFoto_Click(object sender, EventArgs e)
+        {
+            viewFuntionalities.CargarFotos(this);
+            
         }
     }
 }

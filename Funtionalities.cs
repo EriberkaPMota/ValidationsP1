@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ValidationsP1.GestionProductosDBDataSetTableAdapters;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using System.IO;         
+using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace ValidationsP1
 {
    public  class Funtionalities
-   {
-
+   {       
         public void CargarYFiltrarActivos(DataTable table, BindingSource bindingSource, object tableAdapter)
         {
             try
@@ -246,6 +247,31 @@ namespace ValidationsP1
         }
 
 
+        public void CargarFotos(Form1 form1)
+        {
+            try
+            {
+                OpenFileDialog chooseImage = new OpenFileDialog();
+                chooseImage.Title = "Choose Image";
+                DialogResult chooseImageDialog = chooseImage.ShowDialog();
 
+                if (chooseImageDialog == DialogResult.OK)
+                {
+                    form1.rutaFotoTextBox.Text = chooseImage.FileName;
+                    //Displaying image from Pc On PictureBox, but borré el otro form
+                    //fotos.imagen.Image = Image.FromFile(chooseImage.FileName);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public bool EsCorreoValido(string correo)
+        {
+            string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(correo, patron);
+        }
     }
 }
