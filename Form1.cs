@@ -140,5 +140,10 @@ namespace ValidationsP1
             viewFuntionalities.CargarFotos(this);
             
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

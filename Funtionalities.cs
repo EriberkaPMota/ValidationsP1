@@ -79,6 +79,7 @@ namespace ValidationsP1
                 // Finaliza edición de los datos vinculados
                 bindingSource.EndEdit();
 
+
                 foreach (DataRow row in dataset.FotosCategoria.Rows)
                 {
                     if (row.RowState == DataRowState.Added)
@@ -88,7 +89,7 @@ namespace ValidationsP1
 
                         if (row["Activo"] == DBNull.Value)
                             row["Activo"] = true;
-                    }
+                    }                    
 
                 }
 
@@ -156,6 +157,8 @@ namespace ValidationsP1
             {
                 // Finaliza edición de los datos vinculados
                 bindingSource.EndEdit();
+
+
 
                 foreach (DataRow row in dataset.Productos.Rows)
                 {
@@ -273,5 +276,5 @@ namespace ValidationsP1
             string patron = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(correo, patron);
         }
-    }
+   }
 }

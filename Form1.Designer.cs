@@ -81,9 +81,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnFoto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fotoIDTextBox = new System.Windows.Forms.TextBox();
+            this.categoriaIDComboBox = new System.Windows.Forms.ComboBox();
             this.fotosCategoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaIDTextBox1 = new System.Windows.Forms.TextBox();
+            this.fotoIDTextBox = new System.Windows.Forms.TextBox();
             this.rutaFotoTextBox = new System.Windows.Forms.TextBox();
             this.fechaCreacionDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.activoCheckBox2 = new System.Windows.Forms.CheckBox();
@@ -123,12 +123,12 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.productoIDTextBox = new System.Windows.Forms.TextBox();
+            this.suplidorIDComboBox = new System.Windows.Forms.ComboBox();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriaIDComboBox1 = new System.Windows.Forms.ComboBox();
+            this.productoIDTextBox = new System.Windows.Forms.TextBox();
             this.nombreProductoTextBox = new System.Windows.Forms.TextBox();
             this.precioUnitarioTextBox = new System.Windows.Forms.TextBox();
-            this.categoriaIDTextBox2 = new System.Windows.Forms.TextBox();
-            this.suplidorIDTextBox1 = new System.Windows.Forms.TextBox();
             this.fechaCreacionDateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.fechaModificacionDateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.activoCheckBox3 = new System.Windows.Forms.CheckBox();
@@ -200,7 +200,7 @@
             // categoriaIDLabel
             // 
             categoriaIDLabel.AutoSize = true;
-            categoriaIDLabel.Location = new System.Drawing.Point(6, 56);
+            categoriaIDLabel.Location = new System.Drawing.Point(6, 61);
             categoriaIDLabel.Name = "categoriaIDLabel";
             categoriaIDLabel.Size = new System.Drawing.Size(108, 19);
             categoriaIDLabel.TabIndex = 0;
@@ -209,7 +209,7 @@
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(6, 88);
+            nombreLabel.Location = new System.Drawing.Point(6, 93);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(73, 19);
             nombreLabel.TabIndex = 2;
@@ -218,7 +218,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(6, 114);
+            descripcionLabel.Location = new System.Drawing.Point(6, 119);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(101, 19);
             descripcionLabel.TabIndex = 4;
@@ -227,7 +227,7 @@
             // fechaCreacionLabel
             // 
             fechaCreacionLabel.AutoSize = true;
-            fechaCreacionLabel.Location = new System.Drawing.Point(6, 150);
+            fechaCreacionLabel.Location = new System.Drawing.Point(6, 155);
             fechaCreacionLabel.Name = "fechaCreacionLabel";
             fechaCreacionLabel.Size = new System.Drawing.Size(127, 19);
             fechaCreacionLabel.TabIndex = 6;
@@ -236,7 +236,7 @@
             // fechaModificacionLabel
             // 
             fechaModificacionLabel.AutoSize = true;
-            fechaModificacionLabel.Location = new System.Drawing.Point(6, 182);
+            fechaModificacionLabel.Location = new System.Drawing.Point(6, 187);
             fechaModificacionLabel.Name = "fechaModificacionLabel";
             fechaModificacionLabel.Size = new System.Drawing.Size(159, 19);
             fechaModificacionLabel.TabIndex = 8;
@@ -245,7 +245,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(6, 209);
+            activoLabel.Location = new System.Drawing.Point(6, 214);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(63, 19);
             activoLabel.TabIndex = 10;
@@ -496,9 +496,9 @@
             this.CategoryGroup.Controls.Add(this.fechaModificacionDateTimePicker);
             this.CategoryGroup.Controls.Add(activoLabel);
             this.CategoryGroup.Controls.Add(this.activoCheckBox);
-            this.CategoryGroup.Location = new System.Drawing.Point(58, 76);
+            this.CategoryGroup.Location = new System.Drawing.Point(56, 71);
             this.CategoryGroup.Name = "CategoryGroup";
-            this.CategoryGroup.Size = new System.Drawing.Size(379, 259);
+            this.CategoryGroup.Size = new System.Drawing.Size(390, 290);
             this.CategoryGroup.TabIndex = 17;
             this.CategoryGroup.TabStop = false;
             this.CategoryGroup.Text = "Categorías";
@@ -506,7 +506,7 @@
             // categoriaIDTextBox
             // 
             this.categoriaIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriasBindingSource, "CategoriaID", true));
-            this.categoriaIDTextBox.Location = new System.Drawing.Point(173, 47);
+            this.categoriaIDTextBox.Location = new System.Drawing.Point(173, 52);
             this.categoriaIDTextBox.Name = "categoriaIDTextBox";
             this.categoriaIDTextBox.Size = new System.Drawing.Size(200, 28);
             this.categoriaIDTextBox.TabIndex = 1;
@@ -524,7 +524,7 @@
             // nombreCategoriaTextBox
             // 
             this.nombreCategoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriasBindingSource, "Nombre", true));
-            this.nombreCategoriaTextBox.Location = new System.Drawing.Point(173, 79);
+            this.nombreCategoriaTextBox.Location = new System.Drawing.Point(173, 84);
             this.nombreCategoriaTextBox.Name = "nombreCategoriaTextBox";
             this.nombreCategoriaTextBox.Size = new System.Drawing.Size(200, 28);
             this.nombreCategoriaTextBox.TabIndex = 3;
@@ -532,7 +532,7 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriasBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(173, 111);
+            this.descripcionTextBox.Location = new System.Drawing.Point(173, 116);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(200, 28);
             this.descripcionTextBox.TabIndex = 5;
@@ -540,7 +540,7 @@
             // fechaCreacionDateTimePicker
             // 
             this.fechaCreacionDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.categoriasBindingSource, "FechaCreacion", true));
-            this.fechaCreacionDateTimePicker.Location = new System.Drawing.Point(173, 143);
+            this.fechaCreacionDateTimePicker.Location = new System.Drawing.Point(173, 148);
             this.fechaCreacionDateTimePicker.Name = "fechaCreacionDateTimePicker";
             this.fechaCreacionDateTimePicker.Size = new System.Drawing.Size(200, 28);
             this.fechaCreacionDateTimePicker.TabIndex = 7;
@@ -548,7 +548,7 @@
             // fechaModificacionDateTimePicker
             // 
             this.fechaModificacionDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.categoriasBindingSource, "FechaModificacion", true));
-            this.fechaModificacionDateTimePicker.Location = new System.Drawing.Point(173, 175);
+            this.fechaModificacionDateTimePicker.Location = new System.Drawing.Point(173, 180);
             this.fechaModificacionDateTimePicker.Name = "fechaModificacionDateTimePicker";
             this.fechaModificacionDateTimePicker.Size = new System.Drawing.Size(200, 28);
             this.fechaModificacionDateTimePicker.TabIndex = 9;
@@ -556,7 +556,7 @@
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.categoriasBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(173, 207);
+            this.activoCheckBox.Location = new System.Drawing.Point(173, 212);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(200, 24);
             this.activoCheckBox.TabIndex = 11;
@@ -565,7 +565,7 @@
             // añadirCate
             // 
             this.añadirCate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(233)))), ((int)(((byte)(250)))));
-            this.añadirCate.Location = new System.Drawing.Point(312, 342);
+            this.añadirCate.Location = new System.Drawing.Point(310, 367);
             this.añadirCate.Name = "añadirCate";
             this.añadirCate.Size = new System.Drawing.Size(121, 42);
             this.añadirCate.TabIndex = 16;
@@ -588,11 +588,11 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewCheckBoxColumn1});
             this.categoriasDataGridView.DataSource = this.categoriasBindingSource;
-            this.categoriasDataGridView.Location = new System.Drawing.Point(443, 76);
+            this.categoriasDataGridView.Location = new System.Drawing.Point(452, 71);
             this.categoriasDataGridView.Name = "categoriasDataGridView";
             this.categoriasDataGridView.RowHeadersWidth = 62;
             this.categoriasDataGridView.RowTemplate.Height = 28;
-            this.categoriasDataGridView.Size = new System.Drawing.Size(488, 303);
+            this.categoriasDataGridView.Size = new System.Drawing.Size(475, 338);
             this.categoriasDataGridView.TabIndex = 14;
             this.categoriasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoriasDataGridView_CellContentClick);
             // 
@@ -648,7 +648,7 @@
             // guardarcate
             // 
             this.guardarcate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(146)))), ((int)(((byte)(213)))));
-            this.guardarcate.Location = new System.Drawing.Point(185, 342);
+            this.guardarcate.Location = new System.Drawing.Point(183, 367);
             this.guardarcate.Name = "guardarcate";
             this.guardarcate.Size = new System.Drawing.Size(121, 42);
             this.guardarcate.TabIndex = 12;
@@ -659,7 +659,7 @@
             // EliminarCate
             // 
             this.EliminarCate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(233)))), ((int)(((byte)(250)))));
-            this.EliminarCate.Location = new System.Drawing.Point(58, 342);
+            this.EliminarCate.Location = new System.Drawing.Point(56, 367);
             this.EliminarCate.Name = "EliminarCate";
             this.EliminarCate.Size = new System.Drawing.Size(121, 42);
             this.EliminarCate.TabIndex = 12;
@@ -685,6 +685,7 @@
             this.tabPage2.Size = new System.Drawing.Size(987, 505);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Catálogo";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // btnFoto
             // 
@@ -700,10 +701,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(233)))), ((int)(((byte)(250)))));
+            this.groupBox1.Controls.Add(this.categoriaIDComboBox);
             this.groupBox1.Controls.Add(fotoIDLabel);
             this.groupBox1.Controls.Add(this.fotoIDTextBox);
             this.groupBox1.Controls.Add(categoriaIDLabel1);
-            this.groupBox1.Controls.Add(this.categoriaIDTextBox1);
             this.groupBox1.Controls.Add(rutaFotoLabel);
             this.groupBox1.Controls.Add(this.rutaFotoTextBox);
             this.groupBox1.Controls.Add(fechaCreacionLabel2);
@@ -717,33 +718,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catálogo de Fotos";
             // 
-            // fotoIDTextBox
+            // categoriaIDComboBox
             // 
-            this.fotoIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fotosCategoriaBindingSource, "FotoID", true));
-            this.fotoIDTextBox.Location = new System.Drawing.Point(138, 47);
-            this.fotoIDTextBox.Name = "fotoIDTextBox";
-            this.fotoIDTextBox.Size = new System.Drawing.Size(200, 28);
-            this.fotoIDTextBox.TabIndex = 1;
+            this.categoriaIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fotosCategoriaBindingSource, "CategoriaID", true));
+            this.categoriaIDComboBox.DataSource = this.categoriasBindingSource;
+            this.categoriaIDComboBox.DisplayMember = "CategoriaID";
+            this.categoriaIDComboBox.FormattingEnabled = true;
+            this.categoriaIDComboBox.Location = new System.Drawing.Point(138, 79);
+            this.categoriaIDComboBox.Name = "categoriaIDComboBox";
+            this.categoriaIDComboBox.Size = new System.Drawing.Size(208, 27);
+            this.categoriaIDComboBox.TabIndex = 20;
+            this.categoriaIDComboBox.ValueMember = "CategoriaID";
             // 
             // fotosCategoriaBindingSource
             // 
             this.fotosCategoriaBindingSource.DataMember = "FotosCategoria";
             this.fotosCategoriaBindingSource.DataSource = this.gestionProductosDBDataSet;
             // 
-            // categoriaIDTextBox1
+            // fotoIDTextBox
             // 
-            this.categoriaIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fotosCategoriaBindingSource, "CategoriaID", true));
-            this.categoriaIDTextBox1.Location = new System.Drawing.Point(138, 79);
-            this.categoriaIDTextBox1.Name = "categoriaIDTextBox1";
-            this.categoriaIDTextBox1.Size = new System.Drawing.Size(200, 28);
-            this.categoriaIDTextBox1.TabIndex = 3;
+            this.fotoIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fotosCategoriaBindingSource, "FotoID", true));
+            this.fotoIDTextBox.Location = new System.Drawing.Point(138, 47);
+            this.fotoIDTextBox.Name = "fotoIDTextBox";
+            this.fotoIDTextBox.Size = new System.Drawing.Size(208, 28);
+            this.fotoIDTextBox.TabIndex = 1;
             // 
             // rutaFotoTextBox
             // 
             this.rutaFotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fotosCategoriaBindingSource, "RutaFoto", true));
             this.rutaFotoTextBox.Location = new System.Drawing.Point(138, 111);
             this.rutaFotoTextBox.Name = "rutaFotoTextBox";
-            this.rutaFotoTextBox.Size = new System.Drawing.Size(200, 28);
+            this.rutaFotoTextBox.Size = new System.Drawing.Size(208, 28);
             this.rutaFotoTextBox.TabIndex = 5;
             // 
             // fechaCreacionDateTimePicker2
@@ -751,7 +756,7 @@
             this.fechaCreacionDateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.fotosCategoriaBindingSource, "FechaCreacion", true));
             this.fechaCreacionDateTimePicker2.Location = new System.Drawing.Point(138, 143);
             this.fechaCreacionDateTimePicker2.Name = "fechaCreacionDateTimePicker2";
-            this.fechaCreacionDateTimePicker2.Size = new System.Drawing.Size(200, 28);
+            this.fechaCreacionDateTimePicker2.Size = new System.Drawing.Size(208, 28);
             this.fechaCreacionDateTimePicker2.TabIndex = 7;
             // 
             // activoCheckBox2
@@ -759,7 +764,7 @@
             this.activoCheckBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.fotosCategoriaBindingSource, "Activo", true));
             this.activoCheckBox2.Location = new System.Drawing.Point(138, 175);
             this.activoCheckBox2.Name = "activoCheckBox2";
-            this.activoCheckBox2.Size = new System.Drawing.Size(200, 24);
+            this.activoCheckBox2.Size = new System.Drawing.Size(208, 24);
             this.activoCheckBox2.TabIndex = 9;
             this.activoCheckBox2.UseVisualStyleBackColor = true;
             // 
@@ -809,11 +814,11 @@
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewCheckBoxColumn3});
             this.fotosCategoriaDataGridView.DataSource = this.fotosCategoriaBindingSource;
-            this.fotosCategoriaDataGridView.Location = new System.Drawing.Point(421, 79);
+            this.fotosCategoriaDataGridView.Location = new System.Drawing.Point(430, 42);
             this.fotosCategoriaDataGridView.Name = "fotosCategoriaDataGridView";
             this.fotosCategoriaDataGridView.RowHeadersWidth = 62;
             this.fotosCategoriaDataGridView.RowTemplate.Height = 28;
-            this.fotosCategoriaDataGridView.Size = new System.Drawing.Size(499, 318);
+            this.fotosCategoriaDataGridView.Size = new System.Drawing.Size(490, 355);
             this.fotosCategoriaDataGridView.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn14
@@ -1132,6 +1137,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(233)))), ((int)(((byte)(250)))));
+            this.groupBox3.Controls.Add(this.suplidorIDComboBox);
+            this.groupBox3.Controls.Add(this.categoriaIDComboBox1);
             this.groupBox3.Controls.Add(productoIDLabel);
             this.groupBox3.Controls.Add(this.productoIDTextBox);
             this.groupBox3.Controls.Add(nombreProductoLabel);
@@ -1139,9 +1146,7 @@
             this.groupBox3.Controls.Add(precioUnitarioLabel);
             this.groupBox3.Controls.Add(this.precioUnitarioTextBox);
             this.groupBox3.Controls.Add(categoriaIDLabel2);
-            this.groupBox3.Controls.Add(this.categoriaIDTextBox2);
             this.groupBox3.Controls.Add(suplidorIDLabel1);
-            this.groupBox3.Controls.Add(this.suplidorIDTextBox1);
             this.groupBox3.Controls.Add(fechaCreacionLabel3);
             this.groupBox3.Controls.Add(this.fechaCreacionDateTimePicker3);
             this.groupBox3.Controls.Add(fechaModificacionLabel2);
@@ -1155,6 +1160,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Productos";
             // 
+            // suplidorIDComboBox
+            // 
+            this.suplidorIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "SuplidorID", true));
+            this.suplidorIDComboBox.DataSource = this.suplidoresBindingSource;
+            this.suplidorIDComboBox.DisplayMember = "SuplidorID";
+            this.suplidorIDComboBox.FormattingEnabled = true;
+            this.suplidorIDComboBox.Location = new System.Drawing.Point(172, 159);
+            this.suplidorIDComboBox.Name = "suplidorIDComboBox";
+            this.suplidorIDComboBox.Size = new System.Drawing.Size(200, 27);
+            this.suplidorIDComboBox.TabIndex = 18;
+            this.suplidorIDComboBox.ValueMember = "SuplidorID";
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataMember = "Productos";
+            this.productosBindingSource.DataSource = this.gestionProductosDBDataSet;
+            // 
+            // categoriaIDComboBox1
+            // 
+            this.categoriaIDComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "CategoriaID", true));
+            this.categoriaIDComboBox1.DataSource = this.categoriasBindingSource;
+            this.categoriaIDComboBox1.DisplayMember = "CategoriaID";
+            this.categoriaIDComboBox1.FormattingEnabled = true;
+            this.categoriaIDComboBox1.Location = new System.Drawing.Point(172, 126);
+            this.categoriaIDComboBox1.Name = "categoriaIDComboBox1";
+            this.categoriaIDComboBox1.Size = new System.Drawing.Size(200, 27);
+            this.categoriaIDComboBox1.TabIndex = 18;
+            this.categoriaIDComboBox1.ValueMember = "CategoriaID";
+            // 
             // productoIDTextBox
             // 
             this.productoIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "ProductoID", true));
@@ -1162,11 +1196,6 @@
             this.productoIDTextBox.Name = "productoIDTextBox";
             this.productoIDTextBox.Size = new System.Drawing.Size(200, 28);
             this.productoIDTextBox.TabIndex = 1;
-            // 
-            // productosBindingSource
-            // 
-            this.productosBindingSource.DataMember = "Productos";
-            this.productosBindingSource.DataSource = this.gestionProductosDBDataSet;
             // 
             // nombreProductoTextBox
             // 
@@ -1183,22 +1212,6 @@
             this.precioUnitarioTextBox.Name = "precioUnitarioTextBox";
             this.precioUnitarioTextBox.Size = new System.Drawing.Size(200, 28);
             this.precioUnitarioTextBox.TabIndex = 5;
-            // 
-            // categoriaIDTextBox2
-            // 
-            this.categoriaIDTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "CategoriaID", true));
-            this.categoriaIDTextBox2.Location = new System.Drawing.Point(172, 124);
-            this.categoriaIDTextBox2.Name = "categoriaIDTextBox2";
-            this.categoriaIDTextBox2.Size = new System.Drawing.Size(200, 28);
-            this.categoriaIDTextBox2.TabIndex = 7;
-            // 
-            // suplidorIDTextBox1
-            // 
-            this.suplidorIDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "SuplidorID", true));
-            this.suplidorIDTextBox1.Location = new System.Drawing.Point(172, 156);
-            this.suplidorIDTextBox1.Name = "suplidorIDTextBox1";
-            this.suplidorIDTextBox1.Size = new System.Drawing.Size(200, 28);
-            this.suplidorIDTextBox1.TabIndex = 9;
             // 
             // fechaCreacionDateTimePicker3
             // 
@@ -1376,9 +1389,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(995, 535);
+            this.ClientSize = new System.Drawing.Size(1006, 543);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1458,7 +1472,6 @@
         private System.Windows.Forms.Button eliminarCata;
         private System.Windows.Forms.DataGridView fotosCategoriaDataGridView;
         private System.Windows.Forms.TextBox fotoIDTextBox;
-        private System.Windows.Forms.TextBox categoriaIDTextBox1;
         private System.Windows.Forms.DateTimePicker fechaCreacionDateTimePicker2;
         private System.Windows.Forms.CheckBox activoCheckBox2;
         private System.Windows.Forms.TabPage tabPage4;
@@ -1478,8 +1491,6 @@
         private System.Windows.Forms.TextBox productoIDTextBox;
         private System.Windows.Forms.TextBox nombreProductoTextBox;
         private System.Windows.Forms.TextBox precioUnitarioTextBox;
-        private System.Windows.Forms.TextBox categoriaIDTextBox2;
-        private System.Windows.Forms.TextBox suplidorIDTextBox1;
         private System.Windows.Forms.DateTimePicker fechaCreacionDateTimePicker3;
         private System.Windows.Forms.DateTimePicker fechaModificacionDateTimePicker2;
         private System.Windows.Forms.CheckBox activoCheckBox3;
@@ -1500,6 +1511,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.Button btnFoto;
         public System.Windows.Forms.TextBox rutaFotoTextBox;
+        private System.Windows.Forms.ComboBox categoriaIDComboBox;
+        private System.Windows.Forms.ComboBox suplidorIDComboBox;
+        private System.Windows.Forms.ComboBox categoriaIDComboBox1;
     }
 }
 
